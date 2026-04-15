@@ -1,0 +1,51 @@
+## OLTP & OLAP ## 
+
+> online transactional processing   ||  DBA's 
+>> Normalization > NF's
+
+
+> online analytical processing (ex. WhereScape) 
+>> Data Warehouse !
+
+>> DE make it efficient for reads .
+
+
+
+<<>> Coz its very inefficient reading from OLTP soo DE make use OLAP <>
+
+>> Datawarehouses > which can manage this .
+
+>>> Modelling used >> Dimentional Modelling !
+
+
+<<>>  OLTP ---> ETL ---> OLAP !
+
+
+
+
+## Data wareHousing !
+
+> Data Source ----> Staging layer ----> TransForm ----> Core Layer ----> Data Warehouse !
+
+>>> In CORE layer we have fact and dimensions !
+
+>>> Why staging Layer >>>>
+>>>> Coz direct query from db is expensive 
+
+
+# Staging layer
+
+1. Transient  || Temporary .
+2. Persistent
+
+
+# Incremental loading !
+
+> Lets say i have data already loaded (from 2024-2025 )
+>> But if 2026 data came up --> we don't actually start all this from 2024 we just scrap 2026 data !!!! 
+
+
+## Dimentional Modelling >
+
+> We store our data in form of fact and dimensions !
+>> 

@@ -1,0 +1,62 @@
+SURROGATE KEY >>>
+
+1. artifial key and auto increment number
+2. **** used when natural keys are inconvenient || too long  ****
+
+o_id           price     surrogate_key
+
+vjnejvjej       10          1
+jkvkejvh        30          2
+ewkcbjhbv       50          3
+
+
+ **** Where v/s Having *****
+
+1. Where > is used with the columns which are already avil. in the columns !!!
+
+2. But if columns are made after * calculating something * then use HAVING 
+
+ex > "Calculated col. ( Soo no where only having )
+
+Select 
+    catagory,
+    avg(price) AS avg_p,
+    sum(price) AS total_p
+Form 
+    dim_tanle
+Group by
+    catagory
+
+HAVING 
+    avg_p > 500 
+
+
+## ExeCution flow ##
+> from which table
+> then filters ( where country = germany )
+> grouping ( group by )
+> Having 
+> At end to select line par jayga !!!
+
+> order by 
+> limit etc   >>>>
+
+Select 
+    category.
+    avg(price) as avg
+From 
+    ..
+where 
+    ..
+group by    
+    ..
+Having  
+    avg > 500
+
+
+QQQ .. If select executing at last thennnn HOW HAVING takin use of thhis 
+
+>> Coz beauty of sql no other (ms sql) will provide this
+
+
+// 

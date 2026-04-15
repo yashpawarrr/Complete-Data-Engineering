@@ -1,0 +1,276 @@
+## BloC v/s S3 
+
+1. Both stores files 
+2. In chunks 
+
+1. Block >>> EBS ( O.S manage those chunks )
+
+2. S3 >>> Aws service manages chunks itself ( stored in distributed nodes ) !!!
+
+
+
+Classes in S3 >>>>
+
+<> Acc. to different use cases we have different classses ! so choose wisely 
+
+S3 Standerd
+S3 Standerd-1A etccc
+
+&& Data Lake - ( Enhances BLOBs ) 
+
+1. Sometimes we need to maintain a heirarchy 
+2. ACL
+
+
+
+In Amazon Web Services (AWS), an ACL (Access Control List) is a set of rules that controls who can access resources and what actions they can perform.
+
+<<<< ACL >>>>
+There are two main types of ACLs in AWS, but most commonly people mean Network ACL (NACL) when talking about EC2 networking.
+
+🔐 1. Network ACL (NACL)
+
+A Network ACL works at the subnet level inside a VPC.
+
+🧠 Key features:
+Controls inbound and outbound traffic
+Works as a firewall for subnets
+Stateless → every request and response must be allowed explicitly
+Uses rules with numbers (priority order)
+
+⚠️ Important:
+You must allow both inbound and outbound traffic
+If inbound allows traffic but outbound blocks it → connection fails
+
+🧱 2. Security Group vs NACL (Very important)
+
+Students often confuse these:
+
+Feature	Security Group	NACL
+Level	Instance level	Subnet level
+State	Stateful	Stateless
+Rules	Only allow	Allow + Deny
+Evaluation	All rules	Rule order (numbered)
+
+
+📦 3. S3 ACL (Object-level permissions)
+
+ACLs are also used in Amazon S3 (Simple Storage Service).
+
+Used for:
+Controlling access to buckets and objects
+Granting permissions to:
+AWS accounts
+Public users (not recommended)
+Example:
+Make a file public (read-only)
+Give another AWS account access
+
+
+🚀 When to use NACL?
+Add an extra layer of security
+Block specific IP ranges
+Enforce strict subnet-level control
+
+
+
+Classes in S3 >>>>
+
+<> Acc. to different use cases we have different classses ! so choose wisely 
+
+S3 Standerd
+S3 Standerd-1A etccc
+
+
+❄️ AWS Snowball
+
+AWS Snowball is a data transfer service used to move large amounts of data (TBs–PBs) into or out of AWS using a physical device.
+
+🧠 Why it’s used:
+Internet transfer is too slow or unreliable
+You have huge data (like backups, logs, media files)
+
+
+🔗 How Snowball and S3 work together
+📦 Flow:
+You request a Snowball device from AWS
+AWS ships the device to you
+You copy your data into the Snowball device
+Ship it back to AWS
+AWS uploads that data into an S3 bucket
+
+👉 So:
+
+Snowball = transport device
+S3 bucket = final storage location
+
+
+
+33 AWS LAMBDA 33
+
+> Write lambda functions in your fav. language , and use both SERVERLESS & CONTAINER TOOLS such as AWS SAM || DOCKER cli to build , test and deploy your function !!!!!
+
+
+
+🧠 What CloudWatch actually does ( OBSERVABILITY )
+
+Think of it as a “health monitor + CCTV + alarm system” for your cloud.
+
+It collects:
+
+Metrics (CPU, memory, network, etc.)
+Logs (application logs, system logs)
+Events (changes in AWS resources)
+
+🧠 Why it’s important
+Debugging production issues
+Monitoring system health
+Automating responses (auto scaling, alerts)
+📊 Simple flow
+
+App/EC2 → CloudWatch collects data → You analyze → Alarm triggers action
+
+
+
+🔥 Real-world use cases ( LAmbdaa ) (important)
+1. 📂 File upload processing (VERY COMMON)
+
+With Amazon S3
+
+Flow:
+User uploads file to S3
+Lambda triggers automatically
+Code runs:
+Resize image
+Validate file
+Extract data
+
+2. 📊 Data pipeline (Data Engineer use case)
+
+With Apache Kafka or streams
+
+Flow:
+Data arrives (stream/event)
+Lambda runs:
+> Clean data
+> Transform data
+> Send to database
+
+3. 🔔 Alerts & automation
+
+With Amazon CloudWatch
+
+Flow:
+CPU > 80%
+Lambda runs:
+Send email
+Restart service
+
+4. 🌐 Backend APIs (serverless apps)
+
+With API Gateway
+
+Flow:
+User hits API
+Lambda runs:
+Fetch data
+Process request
+Return response
+
+5. 🧹 Scheduled jobs (cron jobs)
+Run every day/hour
+Example:
+Clean old data
+Generate reports
+
+
+🧠 Key idea (super important)
+
+👉 Lambda runs event-driven code
+
+You don’t say:
+
+“Run this program”
+
+Instead:
+
+“When X happens → run this code”
+
+
+🎯 Interview answer (perfect)
+
+👉 “AWS Lambda is used to run small event-driven code
+like data processing, file handling, API logic, or automation tasks without managing servers.”
+
+💡 For YOU (Data Engineering angle)
+
+Lambda is used for:
+
+Light ETL
+Event processing
+Trigger-based pipelines
+
+
+
+%% AWS GLUE %%  >>> E-T-L solution !!!! 
+
+>>> IMP. >>> We don't create any glue service , btw its a component which contains catalogs !!!
+
+Solution made to bind multiple component for a solution >
+
+## Components !
+
+1. Data Catalog > 
+
+you use crawler (data catalog component) to build catalogs/Tables
+
+88 WORKFlow >
+
+S3 ----> Crawler ----> Catalog Table 
+
+> crawler will automatically FETCH metadata of all the files/folders , Heirarchichally and 
+  register them in catalog automatically !!!!!!!!!
+
+
+QQQQ. But why do you've to register the data in the table >>>>
+
+> for analyzing and Querieng !
+
+## HOW >>
+
+1. Manually , 2. Crawler himself automatically !
+
+
+
+2. Visual E.T.L >>> MAin CRux of AWS GLUE
+
+> USer ---> Glue ---> Workflow !
+
+
+
+
+
+/// ********* Pipepline Services *************
+
+## Basics >>>>
+
+1. Transformed data koo STORE kia jata hai >>> Delta formet me and we use LAKEHOUSE SOLUTION HERE !!!!
+
+//
+\\
+//
+\\
+//
+
+
+##### AWS ATHENAA ##### Serverless SQL POOL / Service
+
+? Lets you analyse large datasets directly in S3 without any set up or manage any large infraa.
+? Pay for the query u used 
+
+## S3 contains Json, CSV etc etc and >>> ATHENA just centralize the format allows US TO IMPLEMENT SQL ON top of it !!!
+
+
+# **** IMPPP **** > ATHENA and GLUE are connected to the same DATA CATALOG !!!
+
+>>>> Athena creates a *** table on top of S3 *** bucket ||| Delta which have processed data during ETL
