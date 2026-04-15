@@ -1,0 +1,20 @@
+# Embeddings
+
+> They are vector representation of words that attempt to capture its meaning.
+They are numerical representation that allows m/cs to understand and process human language. There are different ways to create
+embeddings/vector embeddings, such as Bag of words, Word2Vec, GloVe, BERT, TF-IDF
+
+# BAG of WORDS
+
+> As name suggests !
+
+> USes **** Lemmatization/ Stemming ***** >>>  Strategies to create effective vocabulary to exclude redundant words !
+
+?? It just bolega >>> Haan word present haiiii 
+
+>>>>>> BUTTTTT i wanna know their meanings !!!!!
+
+
+$$ HERE comes * Word2Vec *  > We have some input wee need to find the value of it !
+
+> It uses vector representation of 300 direction/vectors 
