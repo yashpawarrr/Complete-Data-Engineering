@@ -1,0 +1,16 @@
+1. First Principle of (ETL) >>>
+
+> During transformation >>>> REMOVE duplicates first ! (drop duplicates) (can be dropped as full row OR column wise) !!!
+
+> You can also perform CUSTOM TRANFORMATIONS !!!! TOOO YOUR OWNN !
+
+
+
+## Mastryy Concept >>>>>
+
+>>>> In TRANSFORM level if we need to implement ** SQL QUERY ** >>>
+
+> SQL Query expects a ** DATA--FRAME **  (COZ' IT RUN SPARK UNDER THE HOOD)
+
+>>>> ISKA BHI SOLUTION HAI 
+

@@ -1,0 +1,29 @@
+# Two - Layers in DATA - WAREHOUSING !!!!!
+
+>> staging (for loading data)  --> T --> CORE (giving data to all other users) !
+
+
+# Incremental Loading !
+
+useCase > Lets say 3-march ka data aapne process kar liaaa > abb next day dubara thodi karogeey !
+
+>> CDC ? Change data capture !
+
+>>> We everytime """ Truncate """ the Staging LAYER !! Soo we can pulll the new data !
+
+> Other-wise it will proces old data again and again
+
+
+>>>> Layers in STAGING !!!
+
+1. Transient 
+2. Persistence !
+
+
+
+## Databricks heirarchy >
+
+   Meta-Store 
+    Catslog
+    Db's
+    Tables  

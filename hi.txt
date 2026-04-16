@@ -1,0 +1,14 @@
+📊 🔥 Minimum “Job-Ready” Stack (Don’t overcomplicate)
+
+If you want a focused path, learn this:
+
+👉 SQL
+👉 Python
+👉 Spark (PySpark)
+👉 One warehouse (Snowflake/BigQuery)
+👉 dbt
+👉 Basics of Airflow
+👉 Databricks
+
+Apache spark !
+Azure Data Factory !

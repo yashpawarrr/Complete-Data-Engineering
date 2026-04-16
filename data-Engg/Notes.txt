@@ -48,4 +48,79 @@
 ## Dimentional Modelling >
 
 > We store our data in form of fact and dimensions !
->> 
+
+>> Fact table & Dimensions >
+
+>> In FACT table we only store numeric values !
+
+
+// Types of DIMENTIONAL MODELLING >
+
+1. STAR        >> MULTIPLE dimensions connected to single fact !
+2. SNOW-FLAKE  >> HEIRARCHICAL DIMENSIONS !
+
+
+
+
+## Slowly changing Dimensions >
+
+Type 0 -> Not changing schema 
+
+// What is schema change hogya by OLTP team 
+Type 1 ->  uses ( UPSERT ) update + insert, Over-Write statements !!! 
+       ->  Will update all the table and manages schema in that way !
+
+// ( HISTORY ) What is i want to preserve the history !        
+Type 2 ->  Preserve History of changes !!!
+
+
+Type 3 ->  Doesn't Not preserve " history " But previous VALUE !!
+
+>>>> 2 columns rahege (curr, prev) type and agar curr me changes hue toh it will reflect in that only but at the same time (prev) will preserve its before hand value  
+
+
+
+## DATALAKE & Warehouse 
+
+1. DL can capture reatain unstructured, semi-structured and structured data in its raw format
+1. DW can capture only structured data DW tores data in quantitative metrics with their attributes !
+
+2. DL > schema is defined after data is stored. This offershigh agility and data capture quite easily , but require work at the end of the process !
+2. DW > Schema defined prior when data is stored .
+
+**** DL Storage cost is low and better queryy results *****
+
+
+
+
+
+## LAKE-HOUSE >>>>>>
+
+1. since storage cost is cheap in DL 
+
+2. ***** We know Warehouse is best for reporting because it creates ** Dimentional data model ** on top of our data ****
+
+>> diag >
+
+We are building DIMENSIONAL DATA MODEL on top of Data reciding in DATALAKE >>>>
+
+When we created data lakehouse on top of DL we send data to various sector !!!
+Soo they can querryy it !
+
+Data ready for processing by various ppl !
+    ^
+    |
+    |
+Metadata/ Governance layer | Abstraction layer 
+( Logical layer to hold schema )
+    ^
+    |  
+    |
+Store in DL (Semi structured data)
+
+
+
+
+🎯 One-line summary
+
+👉 ****** Ingestion pipeline ******* = system that brings raw data into a central system for processing and analysis

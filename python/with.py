@@ -45,6 +45,41 @@ def getInfo(self):
 
 # OR if it's not taking anything soo mark it as @ Static mathod
 
-@staticmethod     ##### DECORATOR !
+@staticmethod     ##### DECORATOR ! (no self required)
 def getInfo():
     print("This is a static method")
+
+
+## CONSTRUCTOR >>>>>
+
+def __init__(self, name, salary, lang):
+    self.name = name
+    self.salary = salary
+    self.lang = lang
+
+
+# CALCULATOR > class which takes argument and do ops #
+
+class CalC:
+    def __init__(self, n):
+        self.n = n
+
+    def square(self):
+        print(f"{self.n * self.n}")
+
+    def sqrt(self):
+        print(f"{ self.n**1/2}")
+
+    
+# IMPPP.   >>> Class v/s Instance Attribute !!!!
+
+class Demo:
+    a = 4      ### All eyes here
+
+o = Demo()
+print(o.a)   # 4 > Class attribute
+
+o.a = 5     # Instance attribute (overriding class attribute) &&&& Doesn't Change the value of class Attribute !!!!
+print(o.a)   # 5 > Instance attribute
+
+

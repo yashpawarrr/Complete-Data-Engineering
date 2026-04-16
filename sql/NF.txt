@@ -1,0 +1,99 @@
+## 2 NF >>>
+
+> Should be in 1 NF 
+> & No *PARTIAL* dependency !
+
+>  means PRImary Key columnshould not contain duplicate values !
+
+>>>> solution > create 2 tables one for NO Partial dependency and another for PARTIAL dependency !
+
+
+## 3 NF >>>
+
+> No transitive dependency for NON-PRIME attributes !
+
+
+>>>> Means whenn one NON primary key attribute depends on another NON primary attribute !!!
+
+name  roll_no  branch  fee
+
+sai     21        cs    10000
+sach    56        me    18675
+
+sooo HERE "FEE" depends on "BRANCH" .
+
+>>> Solution >>>> REMOVE any ONE COLUMN !
+
+1st table contains 
+
+name  roll_no  branch 
+
+
+2nd table contains 
+
+branch  fee 
+
+
+### BCNF ---> Boyce codd NF >>>>
+
+Strict than 3-NF and aka 3.5 NF !
+
+>>>> For any dependency LIKE ( A ----> B )
+>>>> *A* should be a SUPER KEY !
+
+(A super key is any set of one or more columns (attributes) that can uniquely identify a row (tuple) in a table)
+
+Important point:
+A super key may contain extra attributes
+A minimal super key (no extra attributes) is called a candidate key
+
+Super Key → Unique, may have extra columns
+Candidate Key → Minimal unique set (no extra columns)
+
+
+ex. 
+
+roll_no   std_id   branch_id   branch_name
+
+>> std_id *depends on* roll_no  &&  branch_name on branch_id 
+
+>>>> one stu. can opt two branch >>> its not super key !!!
+
+
+Solution >>>>>
+
+1. create seperate tables 1.( roll_no   std_id )   &&   2.( branch_id   branch_name ) >>>>>
+
+
+
+
+## 4 - NF >>>>
+
+>  if its in BCNF and no multi valued dependency !!!!
+
+std_id    course    hobby
+   1        CS       Dance
+   2        ME       Sing 
+
+
+>>>> Here ( hobby and course ) both depends on (std_id) >>>
+
+>> Solution >>> Just seperate it out !
+
+
+
+## 5th NF >>>>>>
+
+( Project join NF ) !!!
+
+> A relation is in fifth NF if its in 4th NF and doesn't contain any JOIN DEPENDENCY !!!!
+
+> 5-NF is satisfied when all the tables present in the dbms are BROKEN DOWN into as many more tables to ensure there is no redundancy !!!
+
+
+subject    faculty    year 
+
+    c       sai        1
+    b       satya      1
+
+>>>> we cant define col. first/last unique-ly we need to DIVIDE it into as samll as possible !!!

@@ -59,4 +59,7 @@ QQQ .. If select executing at last thennnn HOW HAVING takin use of thhis
 >> Coz beauty of sql no other (ms sql) will provide this
 
 
-// 
+// ********* CASTING DATA-TYPE in SQL *********
+
+>   CAST(price as INT) > 1000  
+
