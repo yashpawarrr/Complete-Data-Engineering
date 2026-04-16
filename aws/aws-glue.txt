@@ -1,0 +1,73 @@
+
+Glues >>> ServerLess !!!
+
+☁️ In
+AWS Glue Data Catalog
+
+>>>> This catalog will register the metadata and schema of the files ,
+    and will create an object in the catalog >>>   CSV converted into tables !!!!
+
+
+>>>> S3 ko ham ---> External Table me daal dete hai / Register kar dete hai !
+
+Table metadata lives in the catalog but real data is stored in S3 bucket,
+which is managed by you .
+
+
+This is a central metadata store.
+
+It does NOT store data — it stores information about data
+
+Catalog
+ └── Database
+      └── Table
+           └── Data (in S3)
+
+
+# AWS Glue
+
+S3 ---> External Table me daal dete hai / Register kar dete hai !
+
+
+### CTAS & CTAS EXTERNAL >  Create Table AS Select ! ( Do not delete data from S3 if sql DROP cmd run )
+
+
+Anyone wants to build another table with the same data ! 
+But They wants to use THE ALREADY EXISTED EXTERNAL TABLE !!!
+
+? How ? They will apply CTAS (External) ! 
+
+>>> workFlow >
+
+>>>> User --> Existing Catalog table pe hit karega QUERY --> Output store in another S3 --> then final table will came out (Final Query table)
+
+
+
+********* PARQUET >>> STORES DATA COLUMN by COLUMN *********
+
+
+//// ***** CTAS MANAGED *****
+
+>>> User --> Wanna create another table from existing ( Catalog table ) --->> U create table and then Store it in a managed LOCATION  (( ** MANAGED by GLUE ** )) ! (hence when u drop the table you have to drop the table as well ) !!!!!
+
+
+/// In a nutshell >>>>>>
+
+In Traditional  >
+In external table, you own the data that being said after running drop command on top of your table table wont be dropped from the S3 However in case of managed tables data will also be dropped !!!
+
+** Exception ** >>>> I AWS Athena is a different tool and S3 is different tool even in MANAGED TABLE ! COZ' S3 location will be managed by AWS 
+
+
+
+### AWS Glue Crawler >>>>
+
+> If User wanna Create TABLE from some data from S3 --->> User have to provide Schemaa -->> Two WAYS >>>>
+
+1. Manually
+2. Crawler  >>>> It will Automatically handle that !!!! Also its used for schemaaa evolution ( If new Row | Col added it will fetch automatically ) !
+
+
+>>>>> But CRAWLER carry the access/permission of both S3 & GLUE catalog (self explenatory) !
+
+

@@ -1,0 +1,33 @@
+## FILE FORMAT !
+
+> WHEN WE STORE DATA IN HDD 
+
+// TYPES >
+
+1. ROW BASED
+2. COLUMN BASED 
+
+1. RB > WHEN WE WANNA *** UPDATE / WRITE *** DATA EFFICIENTLY (OLTP)
+
+2. CB > { (PARQUET, ORC) }  FOR (OLAP) && FASTER READS !
+
+ 
+\\
+    IMP *** DELTA FORMAT *** >>>
+//
+
+its an OPEN TABLE format built on top of PARQUET format and acts as TRANSACTIONAL LAYER !
+
+// FEATURESSS >
+
+1. TRANSACTIONAL LOG > *** JSON FILES ***
+
+IN *PARQUET* metadata, schema etc stored in individual file 
+BUT in delta all that stored in TRANSACTIONAL LOG 
+>> Importance > it allows featuring !
+
+
+2. ALLOWS TO CHANGE SCHEMA (SCHEMA EVOLUTION)
+
+
+3. ACID props.
